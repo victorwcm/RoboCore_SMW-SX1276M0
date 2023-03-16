@@ -23,6 +23,8 @@ Documentation
 Version History
 ---------------
 
+* [v1.1.1](https://github.com/victorwcm/RoboCore_SMW-SX1276M0) - Added 'AT+CH' command support. This command is essential for FSB configuration.
+                                                               - Included an example using the AT+CH command to enable the RoboCore LoRaWAN Bee to work on the frequency plan Australia 915-928 MHz, FSB 2 (used by TTN)
 * [v1.1.0](https://github.com/RoboCore/RoboCore_SMW-SX1276M0) - Added commands, including for P2P.
 * [v1.0.2](https://github.com/RoboCore/RoboCore_SMW-SX1276M0/releases/tag/v1.0.2) - Minor update.
 * [v1.0.1](https://github.com/RoboCore/RoboCore_SMW-SX1276M0/releases/tag/v1.0.1) - Minor update.
