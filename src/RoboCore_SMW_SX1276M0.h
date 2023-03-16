@@ -94,6 +94,7 @@ const char* const CMD_ADR = "ADR"; // Adaptive Data Rate (8.2.2)
 const char* const CMD_DR = "DR"; // Data Rate (8.2.3)
 const char* const CMD_NUM_RETRIES = "MCFR"; // Uplink Retries with Confirmation (8.2.11)
 const char* const CMD_TXP = "TXP"; // TX Power (8.2.12)
+const char* const CMD_CH = "CH"; // Channel (8.2.18)
 const char* const CMD_RESET = "RESET"; // Reset (9.2.1)
 const char* const CMD_VERSION = "VER"; // Version (9.2.3)
 const char* const CMD_CONFIRMATION = "CFM"; // Uplink Confirmation (9.2.5)
@@ -112,6 +113,9 @@ const char* const RSPNS_EVENT = "[EVENT]";
 const char* const RSPNS_JOINED = "JOINED";
 const char* const RSPNS_RECV = "RECV";
 const char* const RSPNS_SLEEP = "SLEEP";
+
+const char* const SMW_SX1276M0_CH_ON = "status=1";
+const char* const SMW_SX1276M0_CH_OFF = "status=0";
 
 
 // --------------------------------------------------
@@ -205,6 +209,7 @@ class SMW_SX1276M0 {
     CommandResponse set_AppKey(const char *);
     CommandResponse set_AppSKey(const char *);
     CommandResponse set_Confirmation(uint8_t);
+    CommandResponse set_CH(uint8_t channel, bool enable);
     CommandResponse set_DevAddr(const char *);
     CommandResponse set_DevEUI(const char *);
     CommandResponse set_DR(uint8_t);

@@ -1242,6 +1242,19 @@ CommandResponse SMW_SX1276M0::set_Confirmation(uint8_t confirm_mode){
 
 // --------------------------------------------------
 
+// Set an specific channel status
+//  @param (channel) : specific channel to change status (0 to 71) [uint8_t]
+//  @param (enable) : channel status (true - enable; false - disable) [bool]
+//  @returns the type of the response [CommandResponse]
+CommandResponse SMW_SX1276M0::set_CH(uint8_t channel, bool enable) {
+  char data[15];
+  sprintf(data, "%d %s%c", channel, (enable==true?SMW_SX1276M0_CH_ON:SMW_SX1276M0_CH_OFF), CHAR_EOS);
+  _send_command(CMD_CH, 1, data);
+  CommandResponse res = _read_response(SMW_SX1276M0_TIMEOUT_WRITE); // this command takes almost 1 s to reply
+
+  return res;
+}
+
 // Set the Device Address
 //  @param (devaddr) : the array with the data to be sent [char *]
 //  @returns the type of the response [CommandResponse]
