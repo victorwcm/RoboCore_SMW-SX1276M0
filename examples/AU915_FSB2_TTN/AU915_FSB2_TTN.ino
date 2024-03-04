@@ -81,11 +81,16 @@ void setup() {
   // defines the module reset pin
   lorawan.setPinReset(5);
   // resets the module
-  lorawan.reset(); 
+  lorawan.reset();
+
+  // set Region
+  lorawan.set_Region(1);
+  // set the Device EUI
+  lorawan.set_DevEUI("XXXXXXXXXXXXXXXX");                      
 
   // enables FSB2 channels and disable non-FSB 2 channels
   for(int i = 0; i < 72; i++) {
-    // enable FSB 2 frquencies
+    // enable FSB 2 frequencies
     if((i >= 8 && i <= 15) || i == 65) {
       response = lorawan.set_CH(i, true);
     }
